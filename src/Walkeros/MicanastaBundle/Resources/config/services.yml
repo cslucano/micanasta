@@ -1,0 +1,7 @@
+parameters:
+#    walkeros_micanasta.example.class: Walkeros\MicanastaBundle\Example
+
+services:
+#    walkeros_micanasta.example:
+#        class: %walkeros_micanasta.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

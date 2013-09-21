@@ -1,0 +1,4 @@
+walkeros_micanasta:
+    resource: "@WalkerosMicanastaBundle/Resources/config/routing.yml"
+    prefix:   /
+
