@@ -1,4 +1,4 @@
 Mi Canasta
 ==========
 
-Semaforo de Productos de Temporada
+Semáforo de Productos de Temporada
