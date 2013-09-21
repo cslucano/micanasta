@@ -1,0 +1,14 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_pgsql
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: micanasta
+    database_user: micanasta
+    database_password: micanasta
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    locale: en
+    secret: 6a09217ad32fdd60c4df246a1e2e94294c09546f
