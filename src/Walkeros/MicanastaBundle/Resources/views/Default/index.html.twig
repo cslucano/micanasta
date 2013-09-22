@@ -3,9 +3,10 @@
 <br>
 {% for producto in productos %}
 >>>><b>{{ producto.nombre }}, {{ producto.descripcion }}, {{ producto.precio}}, {{ producto.variacion }}, {{ producto.path }}<br></b>
-    <br>
+>>>>>>>>{{ producto.estadisticaactual.mes }},{{ producto.estadisticaactual.estacionalidad }},{{ producto.estadisticaactual.categoria.descripcion }}<br>
     {% for estadistica in producto.estadisticas %}
 >>>>>>>>{{ estadistica.mes }},{{ estadistica.estacionalidad }},{{ estadistica.categoria.descripcion }}<br>
     {% endfor %}
+    <br>
 {% endfor %}
 {% endblock %}

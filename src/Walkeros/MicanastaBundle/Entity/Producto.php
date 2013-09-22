@@ -2,6 +2,7 @@
 
 namespace Walkeros\MicanastaBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -297,5 +298,18 @@ class Producto
     public function getEstadisticas()
     {
         return $this->estadisticas;
+    }
+
+    public function estadisticaActual()
+    {
+        $mes = date('n');
+        foreach($this->estadisticas as $estadistica)
+        {
+            if($estadistica->getMes() === $mes)
+            {
+                return $estadistica;
+            }
+        }
+        return $this->estadisticas[0];
     }
 }
