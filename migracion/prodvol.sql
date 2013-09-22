@@ -1,3 +1,4 @@
+TRUNCARTE prodvol;
 INSERT INTO prodvol (id, codigoprod, descripcion, anho, mes, vol) VALUES
 (nextval('prodvol_id_seq'), '01', 'ACELGA', 2013, 1, 21),
 (nextval('prodvol_id_seq'), '01', 'ACELGA', 2013, 2, 31),
@@ -369,11 +370,4 @@ INSERT INTO prodvol (id, codigoprod, descripcion, anho, mes, vol) VALUES
 (nextval('prodvol_id_seq'), '97', 'MANDARINA', 2013, 4, NULL),
 (nextval('prodvol_id_seq'), '97', 'MANDARINA', 2013, 5, NULL),
 (nextval('prodvol_id_seq'), '97', 'MANDARINA', 2013, 6, NULL),
-(nextval('prodvol_id_seq'), '97', 'MANDARINA', 2013, 7, 22),
-(nextval('prodvol_id_seq'), '', 'Total General  :', 2013, 1, 13),
-(nextval('prodvol_id_seq'), '', 'Total General  :', 2013, 2, 47),
-(nextval('prodvol_id_seq'), '', 'Total General  :', 2013, 3, 12),
-(nextval('prodvol_id_seq'), '', 'Total General  :', 2013, 4, 57),
-(nextval('prodvol_id_seq'), '', 'Total General  :', 2013, 5, 14),
-(nextval('prodvol_id_seq'), '', 'Total General  :', 2013, 6, 16),
-(nextval('prodvol_id_seq'), '', 'Total General  :', 2013, 7, 13),
+(nextval('prodvol_id_seq'), '97', 'MANDARINA', 2013, 7, 22);
