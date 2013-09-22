@@ -236,28 +236,6 @@ class Producto
     }
 
     /**
-     * Set giro
-     *
-     * @param \Walkeros\MicanastaBundle\Entity\Giro $giro
-     * @return Producto
-     */
-    public function setGiro(\Walkeros\MicanastaBundle\Entity\Giro $giro = null)
-    {
-        $this->giro = $giro;
-    
-        return $this;
-    }
-
-    /**
-     * Get giro
-     *
-     * @return \Walkeros\MicanastaBundle\Entity\Giro 
-     */
-    public function getGiro()
-    {
-        return $this->giro;
-    }
-    /**
      * Constructor
      */
     public function __construct()

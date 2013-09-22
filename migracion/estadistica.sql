@@ -1,7 +1,7 @@
 -- cargamos data a procucto
 --
-truncate estadistica;
-insert into estadistica
+truncate estadistica cascade;
+insert into estadistica(id, producto_id, mes, estacionalidad, categoria_id)
 select 
   nextval('estadistica_id_seq'),
   b.id,
@@ -11,4 +11,4 @@ select
 from 
   prodestac a INNER JOIN
   producto b ON a.descripcion = b.nombre INNER JOIN
-  categoria c ON a.estado = c.codigo
+  categoria c ON a.estado = c.codigo;
