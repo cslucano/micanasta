@@ -50,13 +50,6 @@ class Producto
     private $variacion;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="estacionalidad", type="integer", nullable=true)
-     */
-    private $estacionalidad;
-
-    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     public $path;
