@@ -34,14 +34,13 @@ class DefaultController extends Controller
 
     public function renderizar($categoria)
     {
-        $hoy = new \DateTime();
-        $mes = date('n',$hoy);
+        $mes = (int)date('n');
 
-        $products = $this->getProducts($categoria, $mes);
+        $productos = $this->getProducts($categoria, $mes);
 
         return $this->render(
             'WalkerosMicanastaBundle:Default:index.html.twig', array(
-              'products' => $products
+              'productos' => $productos
         ));
     }
 
@@ -49,14 +48,15 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $categoria = $em->getRepository('WalkerosMicanasta:Categoria')->findOneByCodigo('TA');
+        $categoria = $em->getRepository('WalkerosMicanastaBundle:Categoria')->findOneByCodigo($categoria);
 
         $query = $em->createQuery('
             SELECT 
-              p, e
+              p, e, c
             FROM 
               WalkerosMicanastaBundle:Producto p LEFT JOIN
-              p.estadisticas e
+              p.estadisticas e LEFT JOIN
+              e.categoria c 
             WHERE
               e.mes = :mes AND
               e.categoria = :categoria

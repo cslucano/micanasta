@@ -1,1 +1,8 @@
 MI CANASTA
+<br>
+{% for producto in productos %}
+>>>>{{ producto.nombre }}, {{ producto.descripcion }}, {{ producto.precio }}, {{ producto.variacion }}, {{ producto.path }}<br>
+    {% for estadistica in producto.estadisticas %}
+>>>>>>>>{{ estadistica.mes }},{{ estadistica.estacionalidad }},{{ estadistica.categoria.descripcion }}<br>
+    {% endfor %}
+{% endfor %}

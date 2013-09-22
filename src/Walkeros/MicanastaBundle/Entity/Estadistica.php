@@ -105,4 +105,50 @@ class Estadistica
     {
         return $this->estacionalidad;
     }
+
+    /**
+     * Set producto
+     *
+     * @param \Walkeros\MicanastaBundle\Entity\Producto $producto
+     * @return Estadistica
+     */
+    public function setProducto(\Walkeros\MicanastaBundle\Entity\Producto $producto = null)
+    {
+        $this->producto = $producto;
+    
+        return $this;
+    }
+
+    /**
+     * Get producto
+     *
+     * @return \Walkeros\MicanastaBundle\Entity\Producto 
+     */
+    public function getProducto()
+    {
+        return $this->producto;
+    }
+
+    /**
+     * Set categoria
+     *
+     * @param \Walkeros\MicanastaBundle\Entity\Categoria $categoria
+     * @return Estadistica
+     */
+    public function setCategoria(\Walkeros\MicanastaBundle\Entity\Categoria $categoria = null)
+    {
+        $this->categoria = $categoria;
+    
+        return $this;
+    }
+
+    /**
+     * Get categoria
+     *
+     * @return \Walkeros\MicanastaBundle\Entity\Categoria 
+     */
+    public function getCategoria()
+    {
+        return $this->categoria;
+    }
 }

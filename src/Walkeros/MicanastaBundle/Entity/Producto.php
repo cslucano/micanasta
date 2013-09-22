@@ -257,4 +257,67 @@ class Producto
     {
         return $this->giro;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->estadisticas = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Set path
+     *
+     * @param string $path
+     * @return Producto
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+    
+        return $this;
+    }
+
+    /**
+     * Get path
+     *
+     * @return string 
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    /**
+     * Add estadisticas
+     *
+     * @param \Walkeros\MicanastaBundle\Entity\Estadistica $estadisticas
+     * @return Producto
+     */
+    public function addEstadistica(\Walkeros\MicanastaBundle\Entity\Estadistica $estadisticas)
+    {
+        $this->estadisticas[] = $estadisticas;
+    
+        return $this;
+    }
+
+    /**
+     * Remove estadisticas
+     *
+     * @param \Walkeros\MicanastaBundle\Entity\Estadistica $estadisticas
+     */
+    public function removeEstadistica(\Walkeros\MicanastaBundle\Entity\Estadistica $estadisticas)
+    {
+        $this->estadisticas->removeElement($estadisticas);
+    }
+
+    /**
+     * Get estadisticas
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getEstadisticas()
+    {
+        return $this->estadisticas;
+    }
 }
