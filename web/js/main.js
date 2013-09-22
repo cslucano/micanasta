@@ -46,7 +46,7 @@ $( document ).ready(function() {
     			tt3 = '';
     		var ans = (tt1 + tt2 + tt3);
 			if(ans != '')
-				$('#container').isotope({ filter: '.'+tt1 + tt2 + tt3 });
+				$('#container').isotope({ filter: '.' + ans });
 			else
 				$(this).click();
     			    		

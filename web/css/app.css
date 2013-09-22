@@ -2839,8 +2839,7 @@ width:auto;
   .shift {
     display: none !important;
   }
-  .shift.in {
-    display: block !important;
+  .shift.in {    
   }
   .row-2 [class*="col"] {
     width: 50%;
@@ -2864,6 +2863,17 @@ width:auto;
   }
 }
 
+@media (max-width: 439px) {
+  .buscador input {
+  max-width: 80% !important;
+}
+
+.buscador span {
+  max-width: 20% !important;
+}
+}
+
 .panel-body-layer{
   background-color: white;
 }
+
