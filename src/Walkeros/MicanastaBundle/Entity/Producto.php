@@ -50,27 +50,6 @@ class Producto
     private $variacion;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="estacionalidad", type="integer", nullable=true)
-     */
-    private $estacionalidad;
-
-    /**
-     * @var Categoria
-     *
-     * @ORM\ManyToOne(targetEntity="Categoria")
-     */
-    private $categoria;
-
-    /**
-     * @var Giro
-     *
-     * @ORM\ManyToOne(targetEntity="Giro")
-     */
-    private $giro;
-
-    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     public $path;

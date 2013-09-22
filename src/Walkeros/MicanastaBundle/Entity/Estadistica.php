@@ -36,6 +36,13 @@ class Estadistica
     private $mes;
 
     /**
+     * @var Categoria
+     *
+     * @ORM\ManyToOne(targetEntity="Categoria")
+     */
+    private $categoria;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="estacionalidad", type="integer", nullable=true)
