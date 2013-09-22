@@ -2717,6 +2717,7 @@ fieldset[disabled] .btn-gplus.active {
 
 .var {
   text-shadow:0px 0px 5px rgba(0, 0, 0, 0.56);
+  font-size: 2.5em;
 }
 
 .rot
@@ -2861,4 +2862,8 @@ width:auto;
   .hidden-xs.show {
     display: inherit !important;
   }
+}
+
+.panel-body-layer{
+  background-color: white;
 }
