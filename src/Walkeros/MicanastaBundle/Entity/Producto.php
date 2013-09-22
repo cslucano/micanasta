@@ -57,13 +57,6 @@ class Producto
     private $estacionalidad;
 
     /**
-     * @var Categoria
-     *
-     * @ORM\ManyToOne(targetEntity="Categoria")
-     */
-    private $categoria;
-
-    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     public $path;
