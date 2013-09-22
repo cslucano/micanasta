@@ -12,4 +12,4 @@ SELECT
 FROM 
   prodporproc 
 GROUP BY
-  descripcion
+  descripcion;
