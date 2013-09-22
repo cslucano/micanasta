@@ -1,98 +1,89 @@
 {% extends 'WalkerosMicanastaBundle::layout.html.twig' %}
 {% block body %}
-<div class="col-lg-4 product">
-	<section class="panel bg-warning no-borders hbox dk">
-		<div class="panel-body" id="pollo" style="background-image:url('images/products/pollo.jpg');background-size:auto 100%; height: 160px; min-width: 294px !important; max-width: 306px !important; background-repeat:no-repeat;">
-			<a class="pull-left var text-success" href="#">
-    			<i class="icon-arrow-up"></i>
-    			<small>+6%</small>
-    		</a>
-        </div>
-        <aside class="s-side">
-			<strong class="h4 rot name">Pollo</strong>
-            <div class="price">
-				<small>S/.</small><br><span class="h3">5.00</span><br><small>kg</small>
-			</div>
-		</aside>
-	</section>
-</div>
-
-<div class="col-lg-4 product">
-	<section class="panel bg-success lter no-borders">
-		<div class="panel-body" id="manzanadelicia" style="background-image:url('images/products/manzana delicia.jpg');background-size:100% auto; height: 204px; background-repeat:no-repeat;"><a class="pull-left var text-success" href="#"><i class="icon-arrow-up"></i><small>+5%</small></a>
-		</div>
-		<footer class="panel-footer dk">
-			<div class="row">
-				<div class="text-center padder">
-					<strong class="h4 name">Manzana delicia</strong><small>S/.</small><span class="h3">5.00</span><small>kg</small>
-				</div>
-			</div>
-		</footer>
-	</section>
-</div>
-
-<div class="col-lg-4 product">
-	<section class="panel bg-danger no-borders">
-		<header class="panel-footer dk">
-			<div class="row">
-				<div class="text-center padder">
-					<strong class="h4 name">Platano Seda</strong><small>S/.</small><span class="h3">2.00</span><small>kg</small>
-				</div>
-			</div>
-		</header> 
-		<div class="panel-body" id="platanoseda" style="background-image:url('images/products/platano.jpg');background-size:100% auto; height: 220px; background-repeat:no-repeat;"><a class="pull-left var text-success" href="#"><i class="icon-circle-blank"></i><small>&plusmn0%</small></a>
-		</div>                  
-	</section>
-</div>
-
-
-
 
 {% for producto in productos %}
 
-<div class="col-lg-4 product">	
 	{% if producto.estadisticaactual.categoria.codigo == "TA" %}
-	<section class="panel bg-danger no-borders">
-		<div class="panel-body" id="manzanadelicia" style="background-image:url('images/products/manzana delicia.jpg');background-size:100% auto; height: 204px; background-repeat:no-repeat;"><a class="pull-left var text-success" href="#"><i class="icon-arrow-up"></i><small>+5%</small></a>
-		</div>
-		<footer class="panel-footer dk">
-			<div class="row">
-				<div class="text-center padder">
-					<strong class="h4 name">{{producto.nombre}}</strong><small>S/.</small><span class="h3">{{producto.precio}}</span><small>kg</small>
-				</div>
+	<div class="col-lg-4 product">
+		<section class="panel bg-success lter no-borders">
+			<div class="panel-body" id="manzanadelicia" style="background:url('images/products/manzana delicia.jpg') no-repeat center center; height: 204px;">
+				<a class="pull-left var text-success" href="#">
+					{% if producto.variacion > 0 %}
+					<i class="icon-arrow-up"></i>
+					<small>+{{producto.variacion}}%</small>
+					{% elseif producto.variacion == 0 %}
+					<i class="icon-circle-blank"></i>
+					<small>&plusmn{{producto.variacion}}%</small>
+					{% else %}
+					<i class="icon-arrow-down"></i>
+					<small>{{producto.variacion}}%</small>
+					{% endif %}
+				</a>
 			</div>
-		</footer>
-	</section>
-	{% elseif producto.estadisticaactual.categoria.codigo == "TB"%}
-	<section class="panel bg-danger no-borders">
-		<header class="panel-footer dk">
-			<div class="row">
-				<div class="text-center padder">
-					<strong class="h4 name">{{producto.nombre}}</strong><small>S/.</small><span class="h3">{{producto.precio}}</span><small>kg</small>
+			<footer class="panel-footer dk">
+				<div class="row">
+					<div class="text-center padder">
+						<strong class="h4 name">Manzana delicia</strong><small>S/.</small><span class="h3">5.00</span><small>kg</small>
+					</div>
 				</div>
+			</footer>
+		</section>
+	</div>
+	{% elseif producto.estadisticaactual.categoria.codigo == "TB" %}
+	<div class="col-lg-4 product">
+		<section class="panel bg-warning no-borders hbox dk">
+			<div class="panel-body" id="palta" style="background: url('images/products/palta.jpg') no-repeat center center; height: 240px !important; width: 100% !important;">
+				<a class="pull-left var text-success" href="#">
+					{% if producto.variacion > 0 %}
+					<i class="icon-arrow-up"></i>
+					<small>+{{producto.variacion}}%</small>
+					{% elseif producto.variacion == 0 %}
+					<i class="icon-circle-blank"></i>
+					<small>&plusmn{{producto.variacion}}%</small>
+					{% else %}
+					<i class="icon-arrow-down"></i>
+					<small>{{producto.variacion}}%</small>
+					{% endif %}
+				</a>
 			</div>
-		</header> 
-		<div class="panel-body" id="platanoseda" style="background-image:url('images/products/platano.jpg');background-size:100% auto; height: 220px; background-repeat:no-repeat;"><a class="pull-left var text-success" href="#"><i class="icon-circle-blank"></i><small>&plusmn0%</small></a>
-		</div>
-	</section>
+			<aside class="s-side">
+				<div class="rot">
+					<strong class="h4 name">Palta</strong>
+				</div>
+				<div class="price">
+					<small>S/.</small><br><span class="h3">5.00</span><br><small>kg</small>
+				</div>
+			</aside>
+		</section>
+	</div>
 	{% else %}
-	<section class="panel bg-danger no-borders">
-		<div class="panel-body" id="pollo" style="background-image:url('images/products/pollo.jpg');background-size:auto 100%; height: 160px; min-width: 294px !important; max-width: 306px !important; background-repeat:no-repeat;">
-			<a class="pull-left var text-success" href="#">
-				<i class="icon-arrow-up"></i>
-				<small>+6%</small>
-			</a>
-		</div>
-		<aside class="s-side">
-			<strong class="h4 rot name">{{producto.nombre}}</strong>
-			<div class="price">
-				<small>S/.</small><br><span class="h3">{{producto.precio}}</span><br><small>kg</small>
-			</div>
-		</aside>
-	</section>
-	{% endif %}             
+	<div class="col-lg-4 product">
+		<section class="panel bg-danger no-borders">
+			<header class="panel-footer dk">
+				<div class="row">
+					<div class="text-center padder">
+						<strong class="h4 name">Platano de Seda</strong><small>S/.</small><span class="h3">2.00</span><small>kg</small>
+					</div>
+				</div>
+			</header> 
+			<div class="panel-body" id="platanoseda" style="background:url('images/products/platano.jpg') no-repeat center center; height: 220px;">
+				<a class="pull-left var text-success" href="#">
+					{% if producto.variacion > 0 %}
+					<i class="icon-arrow-up"></i>
+					<small>+{{producto.variacion}}%</small>
+					{% elseif producto.variacion == 0 %}
+					<i class="icon-circle-blank"></i>
+					<small>&plusmn{{producto.variacion}}%</small>
+					{% else %}
+					<i class="icon-arrow-down"></i>
+					<small>{{producto.variacion}}%</small>
+					{% endif %}	
+				</a>
+			</div>                  
+		</section>
+	</div>
 
-</div>
+	{% endif %}             
 
 {% endfor %}
 {% endblock %}
