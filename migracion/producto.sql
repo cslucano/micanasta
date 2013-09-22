@@ -6,8 +6,8 @@ SELECT
   nextval('producto_id_seq'),
   descripcion, 
   descripcion, 
-  0, 
-  0, 
+  random() *  8 + 3, 
+  random() * 10 - 5, 
   NULL 
 FROM 
   prodporproc 

@@ -1,5 +1,5 @@
 TRUNCATE categoria cascade;
-INSERT INTO categoria(id, codigo, descripcion) VALUES 
-(nextval('categoria_id_seq'), 'TA', 'TEMPORADA ALTA'),
-(nextval('categoria_id_seq'), 'TB', 'TEMPORADA BAJA'),
-(nextval('categoria_id_seq'), 'IN', 'INEXISTENTE');
+INSERT INTO categoria(id, codigo, descripcion, cssclass) VALUES 
+(nextval('categoria_id_seq'), 'TA', 'TEMPORADA ALTA', 'bg-success'),
+(nextval('categoria_id_seq'), 'TB', 'TEMPORADA BAJA', 'bg-warning'),
+(nextval('categoria_id_seq'), 'IN', 'INEXISTENTE', 'bg-danger');
