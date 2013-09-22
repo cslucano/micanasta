@@ -52,25 +52,25 @@ class Producto
     /**
      * @var integer
      *
-     * @ORM\Column(name="estacionalidad", type="integer")
+     * @ORM\Column(name="estacionalidad", type="integer", nullable=true)
      */
     private $estacionalidad;
 
     /**
-     * @var User
+     * @var Categoria
      *
      * @ORM\ManyToOne(targetEntity="Categoria")
      */
     private $categoria;
 
     /**
-     * @var User
+     * @var Giro
      *
      * @ORM\ManyToOne(targetEntity="Giro")
      */
     private $giro;
 
-	/**
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     public $path;
