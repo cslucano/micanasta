@@ -328,7 +328,6 @@ class Producto
             'palta.jpg',
             'papa.jpg',
             'platano.jpg',
-            'pollo.jpg',
             'tomate.jpg',
         );
 

@@ -4,7 +4,7 @@
 {% for producto in productos %}
 
 	{% if producto.estadisticaactual.categoria.codigo == "TA" %}
-	<div class="col-lg-4 product">
+	<div class="col-lg-4 product TA">
 		<section class="panel bg-success lter no-borders">
 			<div class="panel-body" id="manzanadelicia" style="background:url('{{producto.randomimage}}') no-repeat center center; height: 290px;">
 				<a class="pull-left var text-success" href="#">
@@ -30,7 +30,7 @@
 		</section>
 	</div>
 	{% elseif producto.estadisticaactual.categoria.codigo == "TB" %}
-	<div class="col-lg-4 product">
+	<div class="col-lg-4 product TB">
 		<section class="panel bg-warning no-borders hbox dk">
 			<div class="panel-body" id="palta" style="background: url('{{producto.randomimage}}') no-repeat center center; height: 250px !important; width: 100% !important;">
 				<a class="pull-left var text-success" href="#">
@@ -57,7 +57,7 @@
 		</section>
 	</div>
 	{% else %}
-	<div class="col-lg-4 product">
+	<div class="col-lg-4 product IN">
 		<section class="panel bg-danger no-borders">
 			<header class="panel-footer dk">
 				<div class="row">
