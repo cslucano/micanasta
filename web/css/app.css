@@ -2721,25 +2721,33 @@ fieldset[disabled] .btn-gplus.active {
 
 .rot
 {
-  writing-mode:tb-rl;
-  -webkit-transform:rotate(90deg);
-  -moz-transform:rotate(90deg);
-  -o-transform: rotate(90deg);
-  display: block;
-  position: relative;
-  top: 24px;
-}
+width: 170px !important;
+padding-top: 5%;
+text-align: center;
+ margin: 0;
+z-index: 100;
+position: absolute !important;
+-webkit-backface-visibility: hidden !important;
+-webkit-transform: translateX(-100%) rotate(-90deg) !important;
+-webkit-transform-origin: right top;
+-moz-transform: translateX(-100%) rotate(-90deg) !important;
+-moz-transform-origin: right top !important;
+-o-transform: translateX(-100%) rotate(-90deg) !important;
+-o-transform-origin: right top !important;
+transform: translateX(-100%) rotate(-90deg) !important;
+transform-origin: right top !important;
+width:auto;
 }
 
-aside .s-side {
-  width:57px !important;
-  height: 150px !important;
+.s-side {
+  min-width: 1em;
+
 }
 
 .s-side .price {
   position: absolute;
-  bottom: 20px;
-  right: 8px;
+  right: 0.5em;
+  bottom: 11px;
   text-align: center;
 } 
 .s-side .price small:nth-of-type(1) {
@@ -2755,6 +2763,69 @@ aside .s-side {
 .bg-danger .var{
   position: absolute;
   bottom: 22px;
+}
+
+.product {
+  width: 33.333333333% !important;
+}
+
+.panel-body {
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+}
+
+.tags
+{
+  margin: 12px 0 10px 0 !important;
+  font-size: 12px !important;
+  display: inline-block !important;
+  float: left !important;
+}
+
+.tags a {
+  margin: 0 5px !important;
+  font-size: 11px !important;
+  display: inline-block !important;
+  float: left !important;
+}
+
+
+.buscador
+{ margin: 10px 5px 0px 10px !important;
+  width: 403px !important;
+  float:left !important;
+}
+
+.buscador span {
+  width:100px;
+  display:inline-block !important;
+}
+
+.buscador input {
+  max-width: 300px !important;
+}
+
+@media (max-width: 932px ) and (min-width: 768px)    {
+  .wrapper{
+    position:absolute;
+    top:94px !important;
+  }
+
+  .header {
+    min-height:95px !important;
+  }
+}
+@media (max-width: 767px ) and (min-width: 0px)    {
+  .wrapper{
+    position:absolute;
+    top:94px !important;
+  }
+
+  .header {
+    min-height:107px !important;
+  }
 }
 
 @media screen and (min-width: 992px) {
