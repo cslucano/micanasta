@@ -49,6 +49,7 @@
 
 
 {% for producto in productos %}
+
 	<div class="col-lg-4 product">
 	<section class="panel bg-danger no-borders">
 		<header class="panel-footer dk">
@@ -63,5 +64,8 @@
 	</section>
 </div>
 	
+
+  {{ producto.estadisticaactual.mes }},{{ producto.estadisticaactual.estacionalidad }},{{ producto.estadisticaactual.categoria.descripcion }}<br>
+    <br>
 {% endfor %}
 {% endblock %}
