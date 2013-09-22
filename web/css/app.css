@@ -2722,8 +2722,8 @@ fieldset[disabled] .btn-gplus.active {
 
 .rot
 {
-width: 170px !important;
-padding-top: 5%;
+width: 180px !important;
+padding-top: 2.5%;
 text-align: center;
  margin: 0;
 z-index: 100;
@@ -2741,13 +2741,13 @@ width:auto;
 }
 
 .s-side {
-  min-width: 1em;
+  min-width: 1.5em;
 
 }
 
 .s-side .price {
   position: absolute;
-  right: 0.5em;
+  right: 2em;
   bottom: 11px;
   text-align: center;
 } 
