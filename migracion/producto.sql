@@ -1,6 +1,6 @@
 -- cargamos data a procucto
 --
-TRUNCATE CASCADE producto;
+TRUNCATE producto CASCADE;
 INSERT INTO producto(id, nombre, descripcion, precio, variacion, path)
 SELECT 
   nextval('producto_id_seq'),
@@ -12,4 +12,4 @@ SELECT
 FROM 
   prodporproc 
 GROUP BY
-  descripcion
+  descripcion;
