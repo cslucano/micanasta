@@ -50,6 +50,11 @@ class Producto
     private $variacion;
 
     /**
+     * @ORM\OneToMany(targetEntity="Estadistica", mappedBy="producto")
+     */
+    private $estadisticas;
+
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     public $path;

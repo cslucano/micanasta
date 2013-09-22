@@ -1,3 +1,15 @@
 _homepage:
     pattern:  /
     defaults: { _controller: WalkerosMicanastaBundle:Default:index }
+
+_ta:
+    pattern:  /ta
+    defaults: { _controller: WalkerosMicanastaBundle:Default:temporadaAlta }
+
+_tb:
+    pattern:  /tb
+    defaults: { _controller: WalkerosMicanastaBundle:Default:temporadaBaja }
+
+_in:
+    pattern:  /in
+    defaults: { _controller: WalkerosMicanastaBundle:Default:inexistente }
