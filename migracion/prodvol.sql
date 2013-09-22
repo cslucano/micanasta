@@ -1,4 +1,4 @@
-TRUNCARTE prodvol;
+TRUNCATE prodvol;
 INSERT INTO prodvol (id, codigoprod, descripcion, anho, mes, vol) VALUES
 (nextval('prodvol_id_seq'), '01', 'ACELGA', 2013, 1, 21),
 (nextval('prodvol_id_seq'), '01', 'ACELGA', 2013, 2, 31),
