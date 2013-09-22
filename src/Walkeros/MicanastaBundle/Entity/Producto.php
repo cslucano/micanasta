@@ -332,7 +332,7 @@ class Producto
             'tomate.jpg',
         );
 
-        $image = rand($images);
+        $image = array_rand($images);
 
         return null === $this->path
             ? null
