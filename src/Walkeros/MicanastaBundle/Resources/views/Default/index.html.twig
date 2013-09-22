@@ -1,12 +1,71 @@
 {% extends 'WalkerosMicanastaBundle::layout.html.twig' %}
 {% block body %}
-<br>
+<div class="col-lg-4 product">
+	<section class="panel bg-warning no-borders hbox dk">
+		<div class="panel-body" id="pollo" style="background-image:url('images/products/pollo.jpg');background-size:auto 100%; height: 160px; min-width: 294px !important; max-width: 306px !important; background-repeat:no-repeat;">
+			<a class="pull-left var text-success" href="#">
+    			<i class="icon-arrow-up"></i>
+    			<small>+6%</small>
+    		</a>
+        </div>
+        <aside class="s-side">
+			<strong class="h4 rot name">Pollo</strong>
+            <div class="price">
+				<small>S/.</small><br><span class="h3">5.00</span><br><small>kg</small>
+			</div>
+		</aside>
+	</section>
+</div>
+
+<div class="col-lg-4 product">
+	<section class="panel bg-success lter no-borders">
+		<div class="panel-body" id="manzanadelicia" style="background-image:url('images/products/manzana delicia.jpg');background-size:100% auto; height: 204px; background-repeat:no-repeat;"><a class="pull-left var text-success" href="#"><i class="icon-arrow-up"></i><small>+5%</small></a>
+		</div>
+		<footer class="panel-footer dk">
+			<div class="row">
+				<div class="text-center padder">
+					<strong class="h4 name">Manzana delicia</strong><small>S/.</small><span class="h3">5.00</span><small>kg</small>
+				</div>
+			</div>
+		</footer>
+	</section>
+</div>
+
+<div class="col-lg-4 product">
+	<section class="panel bg-danger no-borders">
+		<header class="panel-footer dk">
+			<div class="row">
+				<div class="text-center padder">
+					<strong class="h4 name">Platano Seda</strong><small>S/.</small><span class="h3">2.00</span><small>kg</small>
+				</div>
+			</div>
+		</header> 
+		<div class="panel-body" id="platanoseda" style="background-image:url('images/products/platano.jpg');background-size:100% auto; height: 220px; background-repeat:no-repeat;"><a class="pull-left var text-success" href="#"><i class="icon-circle-blank"></i><small>&plusmn0%</small></a>
+		</div>                  
+	</section>
+</div>
+
+
+
+
 {% for producto in productos %}
->>>><b>{{ producto.nombre }}, {{ producto.descripcion }}, {{ producto.precio}}, {{ producto.variacion }}, {{ producto.path }}<br></b>
->>>>>>>>{{ producto.estadisticaactual.mes }},{{ producto.estadisticaactual.estacionalidad }},{{ producto.estadisticaactual.categoria.descripcion }}<br>
-    {% for estadistica in producto.estadisticas %}
->>>>>>>>{{ estadistica.mes }},{{ estadistica.estacionalidad }},{{ estadistica.categoria.descripcion }}<br>
-    {% endfor %}
+
+	<div class="col-lg-4 product">
+	<section class="panel bg-danger no-borders">
+		<header class="panel-footer dk">
+			<div class="row">
+				<div class="text-center padder">
+					<strong class="h4 name">{{ producto.nombre }}</strong><small>S/.</small><span class="h3">{{ producto.precio}}</span><small>kg</small>
+				</div>
+			</div>
+		</header> 
+		<div class="panel-body" id="platanoseda" style="background-image:url('images/products/platano.jpg');background-size:100% auto; height: 220px; background-repeat:no-repeat;"><a class="pull-left var text-success" href="#"><i class="icon-circle-blank"></i><small>&plusmn {{ producto.variacion }}%</small></a>
+		</div>                  
+	</section>
+</div>
+	
+
+  {{ producto.estadisticaactual.mes }},{{ producto.estadisticaactual.estacionalidad }},{{ producto.estadisticaactual.categoria.descripcion }}<br>
     <br>
 {% endfor %}
 {% endblock %}
