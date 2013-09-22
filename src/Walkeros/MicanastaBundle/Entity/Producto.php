@@ -308,14 +308,6 @@ class Producto
 
     public function estadisticaActual()
     {
-        $mes = date('n');
-        foreach($this->estadisticas as $estadistica)
-        {
-            if($estadistica->getMes() === $mes)
-            {
-                return $estadistica;
-            }
-        }
-        return $this->estadisticas[0];
+        return $this->estadisticasCurrent[0];
     }
 }
