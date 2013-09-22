@@ -52,7 +52,7 @@ class Prodvol
     /**
      * @var integer
      *
-     * @ORM\Column(name="vol", type="integer")
+     * @ORM\Column(name="vol", type="integer", nullable=true)
      */
     private $vol;
 
