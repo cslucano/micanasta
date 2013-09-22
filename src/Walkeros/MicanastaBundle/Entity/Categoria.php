@@ -35,6 +35,13 @@ class Categoria
      */
     private $descripcion;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cssclass", type="string", nullable=true)
+     */
+    private $cssclass;
+
 
     /**
      * Get id
@@ -90,5 +97,28 @@ class Categoria
     public function getDescripcion()
     {
         return $this->descripcion;
+    }
+
+    /**
+     * Set cssclass
+     *
+     * @param string $cssclass
+     * @return Categoria
+     */
+    public function setCssclass($cssclass)
+    {
+        $this->cssclass = $cssclass;
+    
+        return $this;
+    }
+
+    /**
+     * Get cssclass
+     *
+     * @return string 
+     */
+    public function getCssclass()
+    {
+        return $this->cssclass;
     }
 }

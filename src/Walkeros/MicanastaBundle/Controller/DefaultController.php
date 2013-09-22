@@ -58,10 +58,9 @@ class DefaultController extends Controller
               p.estadisticas e LEFT JOIN
               e.categoria c 
             WHERE
-              e.mes = :mes AND
               e.categoria = :categoria
         ')
-        ->setParameter('mes', $mes)
+        //->setParameter('mes', $mes)
         ->setParameter('categoria', $categoria);
 
         return $query->getResult();

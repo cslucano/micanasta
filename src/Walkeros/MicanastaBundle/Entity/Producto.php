@@ -53,6 +53,11 @@ class Producto
     /**
      * @ORM\OneToMany(targetEntity="Estadistica", mappedBy="producto")
      */
+    private $estadisticasCurrent;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Estadistica", mappedBy="producto")
+     */
     private $estadisticas;
 
     /**
@@ -241,6 +246,7 @@ class Producto
      */
     public function __construct()
     {
+        $this->estadisticasCurrent = new \Doctrine\Common\Collections\ArrayCollection();
         $this->estadisticas = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
