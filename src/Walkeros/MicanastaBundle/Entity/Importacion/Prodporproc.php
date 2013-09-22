@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Prodporproc
  *
- * @ORM\Table()
+ * @ORM\Table(name="prodporproc")
  * @ORM\Entity
  */
 class Prodporproc

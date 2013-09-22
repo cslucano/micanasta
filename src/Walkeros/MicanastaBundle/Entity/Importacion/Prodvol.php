@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Prodvol
  *
- * @ORM\Table()
+ * @ORM\Table(name="prodvol")
  * @ORM\Entity
  */
 class Prodvol
