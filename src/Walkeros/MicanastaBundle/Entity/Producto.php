@@ -64,13 +64,6 @@ class Producto
     private $categoria;
 
     /**
-     * @var Giro
-     *
-     * @ORM\ManyToOne(targetEntity="Giro")
-     */
-    private $giro;
-
-    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     public $path;
