@@ -545,7 +545,7 @@ INSERT INTO prodporgiro (id, giro, anho, mes, vol) VALUES
 (nextval('prodporgiro_id_seq'), 'FRUTAS', 2012, 10,NULL),
 (nextval('prodporgiro_id_seq'), 'FRUTAS', 2012, 11,NULL),
 (nextval('prodporgiro_id_seq'), 'FRUTAS', 2012, 12,NULL),
-(nextval('prodporgiro_id_seq'), 'FRUTAS', 2012, 13,7245);
+(nextval('prodporgiro_id_seq'), 'FRUTAS', 2012, 13,7245),
 (nextval('prodporgiro_id_seq'), 'AJI AMARILLO SECO', 2013, 1,104),
 (nextval('prodporgiro_id_seq'), 'AJI AMARILLO SECO', 2013, 2,172),
 (nextval('prodporgiro_id_seq'), 'AJI AMARILLO SECO', 2013, 3,246),
