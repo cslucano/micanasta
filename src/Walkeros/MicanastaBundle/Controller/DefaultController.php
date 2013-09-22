@@ -8,12 +8,32 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('WalkerosMicanastaBundle:Default:index.html.twig', array());
+        return $this->temporadaAltaAction();
     }
 
-    public function temporadaAlta()
+    public function temporadaAltaAction()
     {
         $categoria = 'TA'; 
+
+        return $this->renderizar($categoria);
+    }
+
+    public function temporadaBajaAction()
+    {
+        $categoria = 'TB'; 
+
+        return $this->renderizar($categoria);
+    }
+
+    public function inexistenteAction()
+    {
+        $categoria = 'IN'; 
+
+        return $this->renderizar($categoria);
+    }
+
+    public function renderizar($categoria)
+    {
         $hoy = new \DateTime();
         $mes = date('n',$hoy);
 
@@ -23,7 +43,6 @@ class DefaultController extends Controller
             'WalkerosMicanastaBundle:Default:index.html.twig', array(
               'products' => $products
         ));
-
     }
 
     public function getProducts($categoria, $mes)
