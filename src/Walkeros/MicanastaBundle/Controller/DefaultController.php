@@ -59,6 +59,7 @@ class DefaultController extends Controller
 
         $categoriaTA = $em->getRepository('WalkerosMicanastaBundle:Categoria')->findOneByCodigo('TA');
         $categoriaTB = $em->getRepository('WalkerosMicanastaBundle:Categoria')->findOneByCodigo('TB');
+        $categoriaIN = $em->getRepository('WalkerosMicanastaBundle:Categoria')->findOneByCodigo('IN');
 
         $query = $em->createQuery('
             SELECT 
@@ -98,6 +99,27 @@ class DefaultController extends Controller
         ')
         ->setParameter('mes', $mes)
         ->setParameter('categoria', $categoriaTB);
+
+        $productos = $query->getResult();
+
+        foreach($productos as $producto)
+        {
+            $ids[] = $producto->getId();
+        }
+
+        $query = $em->createQuery('
+            SELECT 
+              p
+            FROM 
+              WalkerosMicanastaBundle:Producto p LEFT JOIN
+              p.estadisticasCurrent ec LEFT JOIN
+              ec.categoria ec_c
+            WHERE
+              ec.mes = :mes AND
+              ec.categoria = :categoria
+        ')
+        ->setParameter('mes', $mes)
+        ->setParameter('categoria', $categoriaIN);
 
         $productos = $query->getResult();
 

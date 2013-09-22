@@ -310,4 +310,32 @@ class Producto
     {
         return $this->estadisticasCurrent[0];
     }
+
+    public function randomImage()
+    {
+        $images = array(
+            'ajimirasolseco.jpeg',
+            'ajlima.jpg',
+            'alcachofa.jpeg',
+            'caigua.jpg',
+            'cebolla.jpg',
+            'cebollaroja.jpg',
+            'choclo.jpeg',
+            'frejol.jpeg',
+            'acelga.jpeg',
+            'lechuga.jpg',
+            'manzanadelicia.jpg',
+            'palta.jpg',
+            'papa.jpg',
+            'platano.jpg',
+            'pollo.jpg',
+            'tomate.jpg',
+        );
+
+        $image = rand($images);
+
+        return null === $this->path
+            ? null
+            : $this->getUploadDir().'/'.$image;
+    }
 }
