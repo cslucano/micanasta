@@ -128,7 +128,7 @@ class DefaultController extends Controller
             $ids[] = $producto->getId();
         }
 
-        $rand_keys = array_rand($ids, 20);
+        $rand_keys = array_rand($ids, 40);
         $rand_vals = array();
 
         foreach($rand_keys as $key => $value)
