@@ -6,7 +6,7 @@
 	{% if producto.estadisticaactual.categoria.codigo == "TA" %}
 	<div class="col-lg-4 product">
 		<section class="panel bg-success lter no-borders">
-			<div class="panel-body" id="manzanadelicia" style="background:url('images/products/manzana delicia.jpg') no-repeat center center; height: 204px;">
+			<div class="panel-body" id="manzanadelicia" style="background:url('images/products/manzana delicia.jpg') no-repeat center center; height: 290px;">
 				<a class="pull-left var text-success" href="#">
 					{% if producto.variacion > 0 %}
 					<i class="icon-arrow-up"></i>
@@ -23,7 +23,7 @@
 			<footer class="panel-footer dk">
 				<div class="row">
 					<div class="text-center padder">
-						<strong class="h4 name">Manzana delicia</strong><small>S/.</small><span class="h3">5.00</span><small>kg</small>
+						<strong class="h4 name">{{producto.nombre}}</strong><small>S/.</small><span class="h3">{{producto.precio}}</span><small>kg</small>
 					</div>
 				</div>
 			</footer>
@@ -32,7 +32,7 @@
 	{% elseif producto.estadisticaactual.categoria.codigo == "TB" %}
 	<div class="col-lg-4 product">
 		<section class="panel bg-warning no-borders hbox dk">
-			<div class="panel-body" id="palta" style="background: url('images/products/palta.jpg') no-repeat center center; height: 240px !important; width: 100% !important;">
+			<div class="panel-body" id="palta" style="background: url('images/products/palta.jpg') no-repeat center center; height: 250px !important; width: 100% !important;">
 				<a class="pull-left var text-success" href="#">
 					{% if producto.variacion > 0 %}
 					<i class="icon-arrow-up"></i>
@@ -48,10 +48,10 @@
 			</div>
 			<aside class="s-side">
 				<div class="rot">
-					<strong class="h4 name">Palta</strong>
+					<strong class="h4 name">{{producto.nombre}}</strong>
 				</div>
 				<div class="price">
-					<small>S/.</small><br><span class="h3">5.00</span><br><small>kg</small>
+					<small>S/.</small><br><span class="h3">{{producto.precio}}</span><br><small>kg</small>
 				</div>
 			</aside>
 		</section>
@@ -62,11 +62,11 @@
 			<header class="panel-footer dk">
 				<div class="row">
 					<div class="text-center padder">
-						<strong class="h4 name">Platano de Seda</strong><small>S/.</small><span class="h3">2.00</span><small>kg</small>
+						<strong class="h4 name">{{producto.nombre}}</strong><small>S/.</small><span class="h3">{{producto.precio}}</span><small>kg</small>
 					</div>
 				</div>
 			</header> 
-			<div class="panel-body" id="platanoseda" style="background:url('images/products/platano.jpg') no-repeat center center; height: 220px;">
+			<div class="panel-body" id="platanoseda" style="background:url('images/products/platano.jpg') no-repeat center center; height: 290px;">
 				<a class="pull-left var text-success" href="#">
 					{% if producto.variacion > 0 %}
 					<i class="icon-arrow-up"></i>
@@ -83,7 +83,7 @@
 		</section>
 	</div>
 
-	{% endif %}             
-
+	{% endif %}            
+ 
 {% endfor %}
 {% endblock %}
