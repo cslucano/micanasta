@@ -6,7 +6,7 @@
 	{% if producto.estadisticaactual.categoria.codigo == "TA" %}
 	<div class="col-lg-4 product">
 		<section class="panel bg-success lter no-borders">
-			<div class="panel-body" id="manzanadelicia" style="background:url('images/products/manzana delicia.jpg') no-repeat center center; height: 290px;">
+			<div class="panel-body" id="manzanadelicia" style="background:url('{{producto.randomimage}}') no-repeat center center; height: 290px;">
 				<a class="pull-left var text-success" href="#">
 					{% if producto.variacion > 0 %}
 					<i class="icon-arrow-up"></i>
@@ -32,7 +32,7 @@
 	{% elseif producto.estadisticaactual.categoria.codigo == "TB" %}
 	<div class="col-lg-4 product">
 		<section class="panel bg-warning no-borders hbox dk">
-			<div class="panel-body" id="palta" style="background: url('images/products/palta.jpg') no-repeat center center; height: 250px !important; width: 100% !important;">
+			<div class="panel-body" id="palta" style="background: url('{{producto.randomimage}}') no-repeat center center; height: 250px !important; width: 100% !important;">
 				<a class="pull-left var text-success" href="#">
 					{% if producto.variacion > 0 %}
 					<i class="icon-arrow-up"></i>
@@ -66,7 +66,7 @@
 					</div>
 				</div>
 			</header> 
-			<div class="panel-body" id="platanoseda" style="background:url('images/products/platano.jpg') no-repeat center center; height: 290px;">
+			<div class="panel-body" id="platanoseda" style="background:url('{{producto.randomimage}}') no-repeat center center; height: 290px;">
 				<a class="pull-left var text-success" href="#">
 					{% if producto.variacion > 0 %}
 					<i class="icon-arrow-up"></i>

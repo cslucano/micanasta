@@ -332,10 +332,10 @@ class Producto
             'tomate.jpg',
         );
 
-        $image = array_rand($images);
+        $image = $images[array_rand($images)];
 
         return null === $this->path
-            ? null
-            : $this->getUploadDir().'/'.$image;
+            ? $this->getUploadDir().'/'.$image
+            : $this->getUploadDir().'/'.$this->path;
     }
 }
