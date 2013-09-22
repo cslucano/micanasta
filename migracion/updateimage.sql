@@ -1,6 +1,7 @@
 -- SELECT * from producto where nombre ilike '%aji%';
 update producto set path = 'acelga.jpeg' where nombre ilike '%acelga%';
 update producto set path = 'ajimirasolseco.jpeg' where nombre ilike '%mirasol%';
+update producto set path = 'ajlima.jpg' where nombre ilike '%aji%';
 update producto set path = 'ajlima.jpg' where nombre ilike '%escabeche%';
 update producto set path = 'alcachofa.jpeg' where nombre ilike '%alcachofa%';
 update producto set path = 'caigua.jpg' where nombre ilike '%caigua%';
