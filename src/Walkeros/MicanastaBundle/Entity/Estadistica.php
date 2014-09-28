@@ -22,7 +22,7 @@ class Estadistica
     private $id;
 
     /**
-     * @var Producto 
+     * @var Producto
      *
      * @ORM\ManyToOne(targetEntity="Producto")
      */
@@ -53,7 +53,7 @@ class Estadistica
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -69,14 +69,14 @@ class Estadistica
     public function setMes($mes)
     {
         $this->mes = $mes;
-    
+
         return $this;
     }
 
     /**
      * Get mes
      *
-     * @return integer 
+     * @return integer
      */
     public function getMes()
     {
@@ -92,14 +92,14 @@ class Estadistica
     public function setEstacionalidad($estacionalidad)
     {
         $this->estacionalidad = $estacionalidad;
-    
+
         return $this;
     }
 
     /**
      * Get estacionalidad
      *
-     * @return integer 
+     * @return integer
      */
     public function getEstacionalidad()
     {
@@ -115,14 +115,14 @@ class Estadistica
     public function setProducto(\Walkeros\MicanastaBundle\Entity\Producto $producto = null)
     {
         $this->producto = $producto;
-    
+
         return $this;
     }
 
     /**
      * Get producto
      *
-     * @return \Walkeros\MicanastaBundle\Entity\Producto 
+     * @return \Walkeros\MicanastaBundle\Entity\Producto
      */
     public function getProducto()
     {
@@ -138,14 +138,14 @@ class Estadistica
     public function setCategoria(\Walkeros\MicanastaBundle\Entity\Categoria $categoria = null)
     {
         $this->categoria = $categoria;
-    
+
         return $this;
     }
 
     /**
      * Get categoria
      *
-     * @return \Walkeros\MicanastaBundle\Entity\Categoria 
+     * @return \Walkeros\MicanastaBundle\Entity\Categoria
      */
     public function getCategoria()
     {

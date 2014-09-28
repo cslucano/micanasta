@@ -2,6 +2,9 @@
 
 namespace Walkeros\MicanastaBundle\Controller;
 
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\Query\Expr\Andx;
+use Doctrine\ORM\Query\Expr\Join;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
@@ -19,21 +22,21 @@ class DefaultController extends Controller
 
     public function temporadaAltaAction()
     {
-        $categoria = 'TA'; 
+        $categoria = 'TA';
 
         return $this->renderizar($categoria);
     }
 
     public function temporadaBajaAction()
     {
-        $categoria = 'TB'; 
+        $categoria = 'TB';
 
         return $this->renderizar($categoria);
     }
 
     public function inexistenteAction()
     {
-        $categoria = 'IN'; 
+        $categoria = 'IN';
 
         return $this->renderizar($categoria);
     }
@@ -53,104 +56,26 @@ class DefaultController extends Controller
     public function getProductosVariados()
     {
         $mes = (int)date('n');
-        $ids = array();
 
+        /** @var EntityManager $em */
         $em = $this->getDoctrine()->getManager();
 
-        $categoriaTA = $em->getRepository('WalkerosMicanastaBundle:Categoria')->findOneByCodigo('TA');
-        $categoriaTB = $em->getRepository('WalkerosMicanastaBundle:Categoria')->findOneByCodigo('TB');
-        $categoriaIN = $em->getRepository('WalkerosMicanastaBundle:Categoria')->findOneByCodigo('IN');
+        $qb = $em->createQueryBuilder();
 
-        $query = $em->createQuery('
-            SELECT 
-              p
-            FROM 
-              WalkerosMicanastaBundle:Producto p LEFT JOIN
-              p.estadisticasCurrent ec LEFT JOIN
-              ec.categoria ec_c
-            WHERE
-              ec.mes = :mes AND
-              ec.categoria = :categoria
-            ORDER BY
-              ec.estacionalidad DESC
-        ')
-        ->setParameter('mes', $mes)
-        ->setParameter('categoria', $categoriaTA);
+        $qb
+            ->select('p','e', 'c')
+            ->from('WalkerosMicanastaBundle:Producto', 'p')
+            ->join(
+                'p.estadisticasCurrent',
+                'e',
+                Join::WITH,
+                $qb->expr()->eq('e.mes',':mes')
+            )
+            ->join('e.categoria', 'c')
+            ->setParameter(':mes', $mes)
+        ;
 
-        $productos = $query->getResult();
-
-        foreach($productos as $producto)
-        {
-            $ids[] = $producto->getId();
-        }
-
-        $query = $em->createQuery('
-            SELECT 
-              p
-            FROM 
-              WalkerosMicanastaBundle:Producto p LEFT JOIN
-              p.estadisticasCurrent ec LEFT JOIN
-              ec.categoria ec_c
-            WHERE
-              ec.mes = :mes AND
-              ec.categoria = :categoria
-            ORDER BY
-              ec.estacionalidad ASC
-        ')
-        ->setParameter('mes', $mes)
-        ->setParameter('categoria', $categoriaTB);
-
-        $productos = $query->getResult();
-
-        foreach($productos as $producto)
-        {
-            $ids[] = $producto->getId();
-        }
-
-        $query = $em->createQuery('
-            SELECT 
-              p
-            FROM 
-              WalkerosMicanastaBundle:Producto p LEFT JOIN
-              p.estadisticasCurrent ec LEFT JOIN
-              ec.categoria ec_c
-            WHERE
-              ec.mes = :mes AND
-              ec.categoria = :categoria
-        ')
-        ->setParameter('mes', $mes)
-        ->setParameter('categoria', $categoriaIN);
-
-        $productos = $query->getResult();
-
-        foreach($productos as $producto)
-        {
-            $ids[] = $producto->getId();
-        }
-
-        $rand_keys = array_rand($ids, 40);
-        $rand_vals = array();
-
-        foreach($rand_keys as $key => $value)
-        {
-            $rand_vals[] = $ids[$value];
-        }
-
-        $query = $em->createQuery('
-            SELECT 
-              p, ec, ec_c, es, es_c
-            FROM 
-              WalkerosMicanastaBundle:Producto p LEFT JOIN
-              p.estadisticasCurrent ec LEFT JOIN
-              ec.categoria ec_c LEFT JOIN
-              p.estadisticas es LEFT JOIN
-              es.categoria es_c
-            WHERE
-              p.id in (:ids)
-        ')
-        ->setParameter('ids', $rand_vals);
-
-        return $query->getResult();
+        return $qb->getQuery()->getResult();
     }
 
     public function getProductos($categoria, $mes)
@@ -160,9 +85,9 @@ class DefaultController extends Controller
         $categoria = $em->getRepository('WalkerosMicanastaBundle:Categoria')->findOneByCodigo($categoria);
 
         $query = $em->createQuery('
-            SELECT 
+            SELECT
               p, ec, ec_c, es, es_c
-            FROM 
+            FROM
               WalkerosMicanastaBundle:Producto p LEFT JOIN
               p.estadisticasCurrent ec LEFT JOIN
               ec.categoria ec_c LEFT JOIN
